@@ -1,0 +1,54 @@
+
+<img class="burger-image center" src="/assets/img/bacon-cheesy-burger.png"/>
+<h1 class="text-center">Eat-Da-Burger!</h1>
+<div class="row">
+  <div class="col-md-6 uneaten">
+  <h4 class="text-center">Freshly made</h4>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <div class="card" style="width: 20rem; margin: 0 auto; margin-bottom: 10px;">
+      <div class="card-body">
+        <h5 class="card-title">{{burger_name}}</h5>
+        <button class="btn btn-primary devour" data={{id}} newState={{devoured}}>Devour!</button>
+      </div>
+      </div>
+      {{/unless}}
+      {{/each}}
+  </div>
+       
+  
+
+  <div class="col-md-6 eaten">
+  <h4 class="text-center">Devoured</h4>
+      {{#each burgers}}
+      {{#if this.devoured}}
+    <div class="card" style="width: 20rem; margin: 0 auto; margin-bottom: 10px">
+      <div class="card-body">
+       <h5 class="card-title">{{burger_name}}</h5>
+        <button class="btn btn-danger delete" data={{id}} newState={{devoured}}>Delete</button>
+      </div>
+    </div>
+    {{/if}}
+      {{/each}}
+    
+
+  </div>
+  </div>
+
+<div class="row">
+<div class="col-md-12 text-center">
+  <h2>Make a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Name Your Burger:</label>
+    <input type="text" id="burger-name" name="name">
+  </div>
+
+  
+
+  <button class="btn btn-lg btn-primary" id="addBurger"type="submit">Add Burger</button>
+</form>
+</div>
+</div>
+

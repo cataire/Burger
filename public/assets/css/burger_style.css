@@ -1,0 +1,16 @@
+body {
+	background-color: #d3d3d3;
+}
+
+.burger-image {
+	width: 20rem;
+	margin: 10px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+h4 {
+	margin: 20px;
+}
